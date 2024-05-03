@@ -36,7 +36,6 @@
 </template>
 <script>
 
-import { reactive } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -52,7 +51,6 @@ export default {
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
     setTimeout(() => {
-      console.log('this.products ', this.products);
       this.products.map((product) => {
         const element = this.$refs[`discount${product.id}`]
         console.log('element ', element);
