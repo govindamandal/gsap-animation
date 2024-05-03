@@ -3,6 +3,7 @@
       <div class="red"></div>
       <div class="green">
         <div class="square"></div>
+        <div class="square2"></div>
       </div>
     </div>
   </template>
@@ -16,10 +17,12 @@
     mounted() {
       gsap.to('.square', {
         scrollTrigger: {
-          trigger: '.square',
+          trigger: '.square2',
           start: 'top 80%',
           end: 'top 30%',
           scrub: 4,
+          pin: '.square',
+          pinSpacing: true,
           toggleActions: 'restart none none none',
           //              onEnter onLeave onEnterBack   onLeaveBack
           markers: {
@@ -29,7 +32,7 @@
           }
         },
         duration: 3,
-        x: 700
+        // x: 700
       })
     }
   }
